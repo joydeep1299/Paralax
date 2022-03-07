@@ -25,7 +25,7 @@ navigationBars.addEventListener("click", () => {
 on scoll down button click 
 */
 scrollDown.addEventListener("click", () => {
-    window.scrollBy(0,700)
+    window.scrollBy(0, 700)
 })
 
 /* 
@@ -47,11 +47,14 @@ const options = {
 };
 
 //  intersecton observer
+
+
 const observer = new IntersectionObserver(scrollIndicator, options);
 
 
 // intersection observer callback
 function scrollIndicator(entries) {
+
     entries.forEach(entry => {
         let scroll = entry.target.dataset.slider;
         let scrollIndicator = document.querySelector(".scroll__indicator--active");
@@ -81,11 +84,15 @@ items.forEach(item => {
 function paralax() {
     let images = document.querySelectorAll(".bg");
     let scroll = window.scrollY;
-    images[0].style.top= `${0-scroll}px `
-    images[1].style.top= `${360-(scroll/1.5)}px`
+    images[0].style.top = `${0 - scroll}px `
+    images[1].style.top = `${360 - (scroll / 1.5)}px`
     // images[1].style.left= `${(scroll/5)}px `
-    images[2].style.top= `${550-(scroll/2)}px `
-    images[2].style.left= `${0-(scroll/5)}px `
+    images[2].style.top = `${550 - (scroll / 2)}px `
+    images[2].style.left = `${0 - (scroll / 5)}px `
 }
 
-window.addEventListener("scroll",paralax)
+window.addEventListener("scroll", () => {
+    if (window.outerWidth >= 992) {
+        paralax()
+    }
+})
