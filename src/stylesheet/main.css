@@ -381,6 +381,43 @@ body {
   font-family: Gilroy;
 }
 
+
+/* ==================================================================== */
+/* for invalid items */
+.invalid-link{
+  cursor: pointer;
+}
+.invalid-msg{
+position: fixed;
+display: none;
+place-items: center;
+top: 30%;
+left: 20%;
+width: 300px;
+height: 200px;
+background-color: white;
+border: solid 3px red;
+z-index: 1000;
+}
+.invalid-msg p{
+  font-family: Gilroy;
+  font-weight: bold;
+  font-size: 1.75rem;
+  word-spacing: 1.25px;
+  color: rgb(88, 88, 88);
+  text-align: center;
+  padding: 5px;
+}
+.invalid-msg button{
+  cursor: pointer;
+width: fit-content;
+border: none;
+padding: 10px;
+font-weight: bold;
+font-size: 1rem;
+background-color: rgb(207, 206, 206);
+}
+
 /* ======== Medium devices (landscape tablets, 768px and up)  ======= */
 
 @media screen and (min-width: 768px) {
@@ -417,6 +454,11 @@ body {
     grid-row: 1;
     grid-column: 10/13;
   }
+  /* for invalid items */
+
+.invalid-msg{
+  left: 30%;
+}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -594,40 +636,12 @@ body {
     grid-row: 1;
     grid-column: 11/13;
   }
-}
 
-
-/* ==================================================================== */
 /* for invalid items */
-.invalid-link{
-  cursor: pointer;
-}
+
 .invalid-msg{
-position: fixed;
-display: none;
-place-items: center;
-top: 30%;
-left: 40%;
-width: 300px;
-height: 200px;
-background-color: white;
-border: solid 3px red;
+  left: 40%;
 }
-.invalid-msg p{
-  font-family: Gilroy;
-  font-weight: bold;
-  font-size: 1.75rem;
-  word-spacing: 1.25px;
-  color: rgb(88, 88, 88);
-  text-align: center;
-  padding: 5px;
+
 }
-.invalid-msg button{
-  cursor: pointer;
-width: fit-content;
-border: none;
-padding: 10px;
-font-weight: bold;
-font-size: 1rem;
-background-color: rgb(207, 206, 206);
-}
+
