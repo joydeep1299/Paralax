@@ -56,15 +56,22 @@ const observer = new IntersectionObserver(scrollIndicator, options);
 function scrollIndicator(entries) {
 
     entries.forEach(entry => {
+        // data attribute value
         let scroll = entry.target.dataset.slider;
+        // scroll indicator selector
         let scrollIndicator = document.querySelector(".scroll__indicator--active");
+        // item image selcetor
+        let itemImg = document.querySelectorAll(".item__img");
         if (entry.isIntersecting) {
             if (scroll == 1) {
                 scrollIndicator.style.transform = `translateY(30px)`;
+                itemImg[0].style.transform= `translateX(0)`
             } else if (scroll == 2) {
                 scrollIndicator.style.transform = `translateY(65px)`;
+                itemImg[1].style.transform= `translateX(0)`
             } else if (scroll == 3) {
                 scrollIndicator.style.transform = `translateY(105px)`;
+                itemImg[2].style.transform= `translateX(0)`
             }
         } else {
             scrollIndicator.style.transform = `translateY(0px)`;

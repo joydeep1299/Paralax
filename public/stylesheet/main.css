@@ -265,13 +265,14 @@ body {
   width: 3px;
   height: 30px;
   background-color: #fff;
-  transition: .5s;
+  transition: 0.5s;
 }
 /* ========== Main body starts =========*/
 /* main-body*/
 #main-body {
   background-color: #0b1d26;
   padding-bottom: 50px;
+  overflow-x: hidden;
 }
 .container {
   width: 80%;
@@ -315,6 +316,18 @@ body {
 .item__img img {
   width: 280px;
   margin-top: 30px;
+}
+.item-one .item__img  {
+  transform: translateX(150%);
+  transition: 0.5s;
+}
+.item-two .item__img  {
+  transform: translateX(-150%);
+  transition: 0.5s;
+}
+.item-three .item__img  {
+  transform: translateX(150%);
+  transition: 0.5s;
 }
 
 /* read more*/
@@ -381,25 +394,24 @@ body {
   font-family: Gilroy;
 }
 
-
 /* ==================================================================== */
 /* for invalid items */
-.invalid-link{
+.invalid-link {
   cursor: pointer;
 }
-.invalid-msg{
-position: fixed;
-display: none;
-place-items: center;
-top: 30%;
-left: 20%;
-width: 300px;
-height: 200px;
-background-color: white;
-border: solid 3px red;
-z-index: 1000;
+.invalid-msg {
+  position: fixed;
+  display: none;
+  place-items: center;
+  top: 30%;
+  left: 20%;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  border: solid 3px red;
+  z-index: 1000;
 }
-.invalid-msg p{
+.invalid-msg p {
   font-family: Gilroy;
   font-weight: bold;
   font-size: 1.75rem;
@@ -408,19 +420,19 @@ z-index: 1000;
   text-align: center;
   padding: 5px;
 }
-.invalid-msg button{
+.invalid-msg button {
   cursor: pointer;
-width: -webkit-fit-content;
-width: -moz-fit-content;
-width: fit-content;
-border: none;
-padding: 10px;
-font-weight: bold;
-font-size: 1rem;
-background-color: rgb(207, 206, 206);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: rgb(207, 206, 206);
 }
 
-/* ======== Medium devices (landscape tablets, 768px and up)  ======= */
+/* ================== Medium devices (landscape tablets, 768px and up)  =============== */
 
 @media screen and (min-width: 768px) {
   /* header */
@@ -446,7 +458,16 @@ background-color: rgb(207, 206, 206);
   .banner__left__social {
     font-size: 1.5rem;
   }
-
+  /* itm img */
+  .item-one .item__img  {
+    transform: translateX(250%);
+  }
+  .item-two .item__img  {
+    transform: translateX(-250%);
+  }
+  .item-three .item__img  {
+    transform: translateX(250%);
+  }
   /* footer rearrangements*/
   .footer__item--middle {
     grid-row: 1;
@@ -458,12 +479,12 @@ background-color: rgb(207, 206, 206);
   }
   /* for invalid items */
 
-.invalid-msg{
-  left: 30%;
-}
+  .invalid-msg {
+    left: 30%;
+  }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
+/* =============== Large devices (laptops/desktops, 992px and up) ===========*/
 
 @media only screen and (min-width: 992px) {
   /* limiting the width */
@@ -585,10 +606,12 @@ background-color: rgb(207, 206, 206);
   #main-body .container {
     width: 70%;
     padding-top: 50px;
+
   }
+
   .item__img img {
     width: 300px;
-}
+  }
   /* item one grid reordring */
   .item-one .item__details {
     grid-row: 1;
@@ -607,6 +630,15 @@ background-color: rgb(207, 206, 206);
     grid-row: 1;
     grid-column: 1/6;
     justify-self: left;
+  }
+  .item-one .item__img {
+    transform: translateX(300%);
+  }
+  .item-two .item__img {
+    transform: translateX(-300%);
+  }
+  .item-three .item__img {
+    transform: translateX(300%);
   }
   /* item three grid reordring */
   .item-three .item__details {
@@ -641,11 +673,9 @@ background-color: rgb(207, 206, 206);
     grid-column: 11/13;
   }
 
-/* for invalid items */
+  /* for invalid items */
 
-.invalid-msg{
-  left: 40%;
+  .invalid-msg {
+    left: 40%;
+  }
 }
-
-}
-
